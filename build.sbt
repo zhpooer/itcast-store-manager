@@ -1,4 +1,4 @@
-name := "learn-seed"
+name := "ssh"
 
 version := "1.0.0"
 
@@ -45,3 +45,35 @@ libraryDependencies += "junit" % "junit" % "4.11" % "test"
 libraryDependencies += "com.novocode" % "junit-interface" % "0.10" % "test"
 
 libraryDependencies += "commons-beanutils" % "commons-beanutils" % "1.9.1"
+
+libraryDependencies += "org.hibernate" % "hibernate-core" % "3.6.10.Final"
+
+libraryDependencies += "com.h2database" % "h2" % "1.4.177"
+
+libraryDependencies += "org.apache.struts" % "struts2-core" % "2.3.16.3"
+
+libraryDependencies += "org.springframework" % "spring-core" % "3.2.8.RELEASE"
+
+libraryDependencies += "org.springframework" % "spring-beans" % "3.2.8.RELEASE"
+
+libraryDependencies += "org.springframework" % "spring-context" % "3.2.8.RELEASE"
+
+libraryDependencies += "org.springframework" % "spring-aspects" % "3.2.8.RELEASE"
+
+libraryDependencies += "org.springframework" % "spring-test" % "3.2.8.RELEASE" % "test"
+
+libraryDependencies += "org.springframework" % "spring-web" % "3.2.8.RELEASE"
+
+libraryDependencies += "org.springframework" % "spring-orm" % "3.2.8.RELEASE"
+
+libraryDependencies += "org.springframework" % "spring-tx" % "3.2.8.RELEASE"
+
+libraryDependencies += "org.apache.struts" % "struts2-spring-plugin" % "2.3.16.3"
+
+libraryDependencies += "c3p0" % "c3p0" % "0.9.1.2"
+
+libraryDependencies += "org.aspectj" % "aspectjweaver" % "1.8.0"
+
+libraryDependencies += "log4j" % "log4j" % "1.2.17"
+
+libraryDependencies += "org.slf4j" % "slf4j-log4j12" % "1.7.7"
