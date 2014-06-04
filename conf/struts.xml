@@ -6,8 +6,37 @@
 	<constant name="struts.devMode" value="true"></constant>
 	<constant name="struts.ui.theme" value="simple"></constant>
 	<package name="base" namespace="/" extends="struts-default">
-	    <action name="hello_*" method="{1}" class="helloWorldAction" >
-	        	        
-	    </action>
+		<interceptors>
+			<interceptor name="loginInterceptor"
+				class="io.zhpooer.store.web.interceptor.LoginInterceptor">
+
+			</interceptor>
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="loginInterceptor">
+				    <param name="excludeMethods">login</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="loginStack"></default-interceptor-ref>
+
+
+		<global-results>
+			<result name="login" type="redirect">/login.jsp</result>
+		</global-results>
+		
+		<!-- <default-action-ref name="login"></default-action-ref> -->
+		<action name="login" class="userinfoAction" method="login">
+			<result name="input">login.jsp</result>
+			<result type="redirect">/jsps/main.jsp</result>
+		</action>
+
+		<action name="store_*" class="storeAction" method="{1}">
+			<result name="editView">/jsps/store/edit.jsp</result>
+			<result name="storeView">/jsps/store/store.jsp</result>
+			
+			<result name="listStore" type="redirectAction">store_list</result>
+		</action>
 	</package>
 </struts>

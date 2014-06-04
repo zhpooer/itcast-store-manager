@@ -10,6 +10,7 @@
                            http://www.springframework.org/schema/aop/spring-aop.xsd
                            http://www.springframework.org/schema/tx
                            http://www.springframework.org/schema/tx/spring-tx.xsd">
+
 	<context:annotation-config />
 
 	<context:property-placeholder location="classpath:hbase.properties"></context:property-placeholder>
@@ -27,16 +28,14 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
-				<prop key="hibernate.hbm2dll.auto">update </prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.format_sql">true </prop>
 				<prop key="hibernate.show_sql">true </prop>
 			</props>
 		</property>
-
-
-		<property name="mappingResources">
+		<property name="mappingDirectoryLocations">
 			<list>
-				<value>io/zhpooer/ssh/domain/User.hbm.xml</value>
+				<value>classpath:io/zhpooer/store/domain/</value>
 			</list>
 		</property>
 	</bean>
@@ -50,9 +49,26 @@
 	</bean>
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
-	<bean id="helloWorldAction" class="io.zhpooer.ssh.action.HelloWorldAction" scope="prototype"> </bean>
 
-	<bean id="userService" class="io.zhpooer.ssh.service.impl.UserServiceImpl"></bean>
-	<bean id="userDao" class="io.zhpooer.ssh.dao.impl.UserDaoImpl"></bean>
+	<!-- actions -->
+	<bean id="userinfoAction" class="io.zhpooer.store.web.action.UserinfoAction"
+		scope="prototype">
+	</bean>
+	<bean id="storeAction" class="io.zhpooer.store.web.action.StoreAction"
+		scope="prototype">
+	</bean>
+	
+<!-- dao -->
+	<bean id="userinfoDao" class="io.zhpooer.store.dao.impl.UserinfoDaoImpl">
+	</bean>
+	<bean id="storeDao" class="io.zhpooer.store.dao.impl.StoreDaoImpl">
+	</bean>
+
+<!-- 	service	 -->
+	<bean id="userinfoService" class="io.zhpooer.store.service.impl.UserinfoServiceImpl">
+	</bean>
+	<bean id="storeService" class="io.zhpooer.store.service.impl.StoreSerivceImpl">
+	</bean>
+
 
 </beans>

@@ -1,4 +1,4 @@
-name := "ssh"
+name := "it-store-manager"
 
 version := "1.0.0"
 
