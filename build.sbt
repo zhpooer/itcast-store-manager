@@ -77,3 +77,5 @@ libraryDependencies += "org.aspectj" % "aspectjweaver" % "1.8.0"
 libraryDependencies += "log4j" % "log4j" % "1.2.17"
 
 libraryDependencies += "org.slf4j" % "slf4j-log4j12" % "1.7.7"
+
+libraryDependencies += "org.apache.struts" % "struts2-json-plugin" % "2.3.16.3"

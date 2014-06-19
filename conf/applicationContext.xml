@@ -57,18 +57,20 @@
 	<bean id="storeAction" class="io.zhpooer.store.web.action.StoreAction"
 		scope="prototype">
 	</bean>
+	<bean id="goodsAction" class="io.zhpooer.store.web.action.GoodsAction"
+		scope="prototype">
+	</bean>
 	
 <!-- dao -->
-	<bean id="userinfoDao" class="io.zhpooer.store.dao.impl.UserinfoDaoImpl">
-	</bean>
-	<bean id="storeDao" class="io.zhpooer.store.dao.impl.StoreDaoImpl">
-	</bean>
+	<bean id="userinfoDao" class="io.zhpooer.store.dao.impl.UserinfoDaoImpl"> </bean>
+	<bean id="storeDao" class="io.zhpooer.store.dao.impl.StoreDaoImpl"> </bean>
+	<bean id="goodsDao" class="io.zhpooer.store.dao.impl.GoodsDaoImpl"> </bean>
+		<bean id="historyDao" class="io.zhpooer.store.dao.impl.HistoryDaoImpl"> </bean>
 
 <!-- 	service	 -->
-	<bean id="userinfoService" class="io.zhpooer.store.service.impl.UserinfoServiceImpl">
-	</bean>
-	<bean id="storeService" class="io.zhpooer.store.service.impl.StoreSerivceImpl">
-	</bean>
+	<bean id="userinfoService" class="io.zhpooer.store.service.impl.UserinfoServiceImpl"> </bean>
+	<bean id="storeService" class="io.zhpooer.store.service.impl.StoreSerivceImpl"> </bean>
+	<bean id="goodsService" class="io.zhpooer.store.service.impl.GoodsServiceImpl"> </bean>
 
 
 </beans>

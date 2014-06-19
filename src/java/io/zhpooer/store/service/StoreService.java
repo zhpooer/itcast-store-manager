@@ -7,7 +7,7 @@ import io.zhpooer.store.domain.Store;
 public interface StoreService {
     public void addStore(Store store);
 
-    public List<Store> findAllService();
+    public List<Store> findAllStore();
 
     public void updateStore(Store store);
 

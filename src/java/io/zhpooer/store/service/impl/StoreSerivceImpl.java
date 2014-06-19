@@ -22,7 +22,7 @@ public class StoreSerivceImpl implements StoreService {
 
     @Transactional(readOnly=true)
     @Override
-    public List<Store> findAllService() {
+    public List<Store> findAllStore() {
         return storeDao.findAll();
 
     }

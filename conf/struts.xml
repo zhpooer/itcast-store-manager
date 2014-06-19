@@ -5,7 +5,7 @@
 <struts>
 	<constant name="struts.devMode" value="true"></constant>
 	<constant name="struts.ui.theme" value="simple"></constant>
-	<package name="base" namespace="/" extends="struts-default">
+	<package name="base" namespace="/" extends="json-default">
 		<interceptors>
 			<interceptor name="loginInterceptor"
 				class="io.zhpooer.store.web.interceptor.LoginInterceptor">
@@ -37,6 +37,13 @@
 			<result name="storeView">/jsps/store/store.jsp</result>
 			
 			<result name="listStore" type="redirectAction">store_list</result>
+			<result name="jsonList" type="json">store_list</result>
+		</action>
+		
+		<action name="goods_*" class="goodsAction" method="{1}">
+		  <result name="findByNmSuccess" type="json"></result>
+		  <result name="findNameLikeSuccess" type="json"></result>
+		  <result name="pageQuerySuccess">/jsps/store/store.jsp</result>
 		</action>
 	</package>
 </struts>

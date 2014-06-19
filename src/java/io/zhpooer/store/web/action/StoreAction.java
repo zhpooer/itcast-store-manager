@@ -38,7 +38,7 @@ public class StoreAction extends ActionSupport implements ModelDriven<Store> {
     }
 
     public String list() {
-        List<Store> stores = storeService.findAllService();
+        List<Store> stores = storeService.findAllStore();
         ActionContext.getContext().put("stores", stores);
         return "storeView"; // storeList.js
     }
@@ -49,8 +49,13 @@ public class StoreAction extends ActionSupport implements ModelDriven<Store> {
         return "editView";
     }
     
+    public String ajaxList(){
+        List<Store> stores = storeService.findAllStore();
+        ActionContext.getContext().getValueStack().push(stores);
+        return "jsonList";
+    }
+    
     // TODO 校验器
-    // TODO 登陆拦截器 检查 
     public String update(){
         storeService.updateStore(store);
         return "listStore";

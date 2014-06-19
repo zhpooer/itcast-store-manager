@@ -5,6 +5,12 @@
 <html>
 <head>
 <link href="<c:url value='/css/maple.css'/>" type="text/css" rel=stylesheet></link>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+if(window.self != window.top){
+    window.top.location.href = "${pageContext.request.contextPath}/login.jsp";
+}
+</script>
 </head>
 <BODY topMargin=0 rightMargin=0 marginwidth="0" marginheight="0">
 	<TABLE height=91 cellSpacing=0 cellPadding=0 width=984

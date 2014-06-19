@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="io.zhpooer.store.domain.History" table="historys">
+    
+        <id name="id" type="java.lang.String">
+            <column name="_ID" />
+            <generator class="uuid" />
+        </id>
+        
+        <many-to-one name="goods" class="io.zhpooer.store.domain.Goods" fetch="join">
+            <column name="GOODS" />
+        </many-to-one>
+        <property name="datetime" type="java.lang.String">
+            <column name="DATETIME" />
+        </property>
+        <property name="type" type="java.lang.String" column="_type">
+        </property>
+        <property name="amount" type="java.lang.Double">
+            <column name="AMOUNT" />
+        </property>
+        <property name="remain" type="java.lang.Double">
+            <column name="REMAIN" />
+        </property>
+        <property name="user" type="java.lang.String" column="_user">
+        </property>
+    </class>
+</hibernate-mapping>

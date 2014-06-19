@@ -9,6 +9,7 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import io.zhpooer.store.dao.StoreDao;
+import io.zhpooer.store.domain.Goods;
 import io.zhpooer.store.domain.Store;
 
 public class StoreDaoImpl implements StoreDao {
@@ -22,8 +23,13 @@ public class StoreDaoImpl implements StoreDao {
         store.setAddress("北京一号线");
         store.setManager("女娲");
         template.save(store);
+        Goods goods = new Goods();
+        goods.setName("好东西");
+        goods.setNm("hdx");
+        goods.setUnit("个");
+        goods.setStore(store);
+        template.save(goods);        
     }
-
     
     @Override
     public void add(Store store) {
